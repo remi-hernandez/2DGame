@@ -14,15 +14,24 @@ public class PlayerScript : MonoBehaviour
 	
 	// 2 - Stockage du mouvement
 	private Vector2 movement;
+	private bool 	Jumped = false;
 	public 	float speed = 8f;
+
 
 	void Update()
 	{
 		// 3 - Récupérer les informations du clavier/manette
 		float inputX = Input.GetAxis("Horizontal");
-		float inputY = Input.GetAxis("Vertical");
+		//float inputY = Input.GetAxis("Vertical");
 
-		
+		if (Input.GetButtonDown("Jump"))
+		{
+			Jumped = true;
+			//rigidbody2D.AddForce(new Vector2(0, 200));
+			//transform.Translate (0,5,0);
+			print("JUMP LA PUTE");
+		}
+
 		// 4 - Calcul du mouvement
 		if (inputX > 0) 
 		{
@@ -56,10 +65,17 @@ public class PlayerScript : MonoBehaviour
 		}
 		
 	}
-	
+
 	void FixedUpdate()
 	{
+
 		// 5 - Déplacement
+		if (Jumped) 
+		{
+			print ("j'ai jump niktarass batar");
+			Jumped = false;
+			rigidbody2D.AddForce (new Vector2 (0, 200));
+		}
 		rigidbody2D.velocity = movement;
 	}
 }
