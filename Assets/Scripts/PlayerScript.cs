@@ -28,7 +28,9 @@ public class PlayerScript : MonoBehaviour
 		{
 			Jumped = true;
 			//rigidbody2D.AddForce(new Vector2(0, 200));
-			//transform.Translate (0,5,0);
+			transform.Translate (0, 1, 0);
+			transform.Translate (0, 1, 0);
+			transform.Translate (0, 1, 0);
 			print("JUMP LA PUTE");
 		}
 
