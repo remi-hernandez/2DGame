@@ -29,7 +29,7 @@ public class PlayerScript : MonoBehaviour
 			Jumped = true;
 			//rigidbody2D.AddForce(new Vector2(0, 200));
 			//transform.Translate (0, 1, 0);
-			print("JUMP LA PUTE");
+			//print("JUMP LA PUTE");
 		}
 
 		// 4 - Calcul du mouvement
@@ -72,7 +72,7 @@ public class PlayerScript : MonoBehaviour
 		// 5 - Déplacement
 		if (Jumped) 
 		{
-			print ("j'ai jump niktarass batar");
+			//print ("j'ai jump niktarass batar");
 			Jumped = false;
 			rigidbody2D.AddForce (new Vector2 (0, 99800));
 		}

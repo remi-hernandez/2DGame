@@ -1,0 +1,11 @@
+F:\work\unity\TeddyGunner\Temp\bin\Debug\Assembly-CSharp.dll
+F:\work\unity\TeddyGunner\Temp\bin\Debug\Assembly-CSharp.pdb
+F:\work\unity\TeddyGunner\Temp\bin\Debug\UnityEditor.dll
+F:\work\unity\TeddyGunner\Temp\bin\Debug\UnityEngine.dll
+F:\work\unity\TeddyGunner\Temp\bin\Debug\Mono.Cecil.dll
+F:\work\unity\TeddyGunner\Temp\bin\Debug\nunit.framework.dll
+F:\work\unity\TeddyGunner\Temp\bin\Debug\Unity.DataContract.dll
+F:\work\unity\TeddyGunner\Temp\bin\Debug\ICSharpCode.NRefactory.dll
+F:\work\unity\TeddyGunner\obj\Debug\Assembly-CSharp-vs.csprojResolveAssemblyReference.cache
+F:\work\unity\TeddyGunner\obj\Debug\Assembly-CSharp.dll
+F:\work\unity\TeddyGunner\obj\Debug\Assembly-CSharp.pdb
