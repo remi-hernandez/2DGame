@@ -24,7 +24,6 @@ public class WeaponScript : MonoBehaviour
 	//--------------------------------
 	
 	private float shootCooldown;
-   private Vector2 shootPosition;
 	
 	void Start()
 	{
@@ -58,11 +57,6 @@ public class WeaponScript : MonoBehaviour
 			// Position
 			shotTransform.position = transform.position;
 			
-         // Test modification de la position a l'apparition #by Taspai
-         shootPosition.x = transform.position.x + 3;
-         shootPosition.y = transform.position.y + (float)0.5;
-         shotTransform.position = shootPosition;
-
 			// Propriétés du script
 			ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 			if (shot != null)

@@ -1,8 +1,7 @@
 fileFormatVersion: 2
 guid: ba1c41e42bc7cab4d97c4bf85b0e9d80
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Teddy
+  fileIDToRecycleName: {}
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -26,9 +25,9 @@ TextureImporter:
   maxTextureSize: 1024
   textureSettings:
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
-    wrapMode: 1
+    wrapMode: -1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
