@@ -1,6 +1,7 @@
 #Bug to fix : 
 
 	- Ne peux pas tirer en déplacement (conflits entre les scripts?)
+		#Fail que avec la souris, pas avec la touche ctrl
 
 #ToDo :
 
