@@ -6,11 +6,12 @@ Direct3D:
     Vendor:   NVIDIA
     VRAM:     1985 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: F:\work\unity\Tuto2d\Bin\2D BITCHES_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading F:\work\unity\Tuto2d\Bin\2D BITCHES_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: F:\work\unity\Tuto2d\Bin\2D BITCHES_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading F:\work\unity\Tuto2d\Bin\2D BITCHES_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.049 seconds
+Platform assembly: F:\work\unity\TeddyGunner\Bin\2D BITCHES_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading F:\work\unity\TeddyGunner\Bin\2D BITCHES_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: F:\work\unity\TeddyGunner\Bin\2D BITCHES_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading F:\work\unity\TeddyGunner\Bin\2D BITCHES_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.197 seconds
 desktop: 2880x1620 59Hz; virtual: 2880x1620 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+Platform assembly: F:\work\unity\TeddyGunner\Bin\2D BITCHES_Data\Managed\System.Core.dll (this message is harmless)
