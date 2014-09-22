@@ -78,7 +78,9 @@ public class ScrollingScript : MonoBehaviour
 		}
 		
 		// 4 - Répétition
-		if (isLooping)
+      // test de commenter ca pour éviter de perdre ceux de gauche
+      /*
+      if (isLooping)
 		{
 			// On prend le premier objet (la la liste est ordonnée)
 			Transform firstChild = backgroundPart.FirstOrDefault();
@@ -110,6 +112,6 @@ public class ScrollingScript : MonoBehaviour
 					}
 				}
 			}
-		}
+ 		}*/
 	}
 }
