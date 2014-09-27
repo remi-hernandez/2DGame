@@ -13,7 +13,7 @@ public class PlayerScript : MonoBehaviour
 	//public Vector2 speed = new Vector2(50, 50);
 	
 	// 2 - Stockage du mouvement
-	private Vector2 movement;
+	// private Vector2 movement;
 	private bool 	Jumped = false;
 	public 	float speed = 8f;
 
@@ -71,10 +71,10 @@ public class PlayerScript : MonoBehaviour
 		// 5 - Déplacement
 		if (Jumped) 
 		{
-			//print ("j'ai jump niktarass batar");
+			// print ("j'ai jump niktarass batar");
 			Jumped = false;
-			rigidbody2D.AddForce (new Vector2 (0, 99800));
+			rigidbody2D.AddForce (new Vector2 (0, 19800));
 		}
-		rigidbody2D.velocity = movement;
+		// rigidbody2D.velocity = movement;
 	}
 }
