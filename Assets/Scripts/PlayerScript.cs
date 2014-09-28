@@ -14,15 +14,16 @@ public class PlayerScript : MonoBehaviour
 	
 	// 2 - Stockage du mouvement
 	// private Vector2 movement;
-	private bool 	Jumped = false;
-   public int nbJumps = 0;
+   private bool 	Jumped = false;
+   private int nbJumps = 0;
+   private System.DateTime timeJumped = System.DateTime.Now;
    public float speed = 8f;
    public Transform checkSol;
    bool toucheLeSol = false;
    float rayonSol = 0.3f; // augmenter cette valeur pour permettre le double saut marche bien : 3f
    public LayerMask sol;
 
-	void Update()
+   void Update()
 	{
 		// 3 - Récupérer les informations du clavier/manette
 		float inputX = Input.GetAxis("Horizontal");
@@ -72,20 +73,21 @@ public class PlayerScript : MonoBehaviour
 
 	void FixedUpdate() // utilisé quand on doit appliquer une force a un rigidbody (modifications physiques mieux pris en charge)
 	{
+      var seconds = (System.DateTime.Now - timeJumped).TotalSeconds;
       toucheLeSol = Physics2D.OverlapCircle(checkSol.position, rayonSol, sol);
       
 		// 5 - Déplacement
+      print("seconds : " + seconds);
+      if (seconds >= 0.15)
+         nbJumps = 0;
 		if (toucheLeSol && Jumped || Jumped && nbJumps >= 1 && nbJumps < 2) 
 		{
          nbJumps += 1;
-			// print ("j'ai jump niktarass batar");
 			Jumped = false;
 			rigidbody2D.AddForce (new Vector2 (0, 19800));
+         timeJumped = System.DateTime.Now;
 		}
       if (nbJumps == 2)
-      {
          nbJumps = 0;
-      }
-		// rigidbody2D.velocity = movement;
 	}
 }
