@@ -15,7 +15,11 @@ public class PlayerScript : MonoBehaviour
 	// 2 - Stockage du mouvement
 	// private Vector2 movement;
 	private bool 	Jumped = false;
-	public 	float speed = 8f;
+   public float speed = 8f;
+   public Transform checkSol;
+   bool toucheLeSol = false;
+   float rayonSol = 3f; // augmenter cette valeur pour permettre le double saut 0,3f
+   public LayerMask sol;
 
 	void Update()
 	{
@@ -65,11 +69,12 @@ public class PlayerScript : MonoBehaviour
 		
 	}
 
-	void FixedUpdate()
+	void FixedUpdate() // utilisé quand on doit appliquer une force a un rigidbody (modifications physiques mieux pris en charge)
 	{
+      toucheLeSol = Physics2D.OverlapCircle(checkSol.position, rayonSol, sol);
 
 		// 5 - Déplacement
-		if (Jumped) 
+		if (toucheLeSol && Jumped) 
 		{
 			// print ("j'ai jump niktarass batar");
 			Jumped = false;
