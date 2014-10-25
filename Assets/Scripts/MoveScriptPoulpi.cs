@@ -39,9 +39,15 @@ public class MoveScriptPoulpi : MonoBehaviour
       if (cptMvt == cptMvtMax)
       {
          if (movement == movementLeft)
+         {
             movement = movementRight;
+            transform.eulerAngles = new Vector2(0, 180); // permet de tourner l'asset
+         }
          else
+         {
             movement = movementLeft;
+            transform.eulerAngles = new Vector2(0, 0);
+         }
          cptMvt = 0;
       }
       else

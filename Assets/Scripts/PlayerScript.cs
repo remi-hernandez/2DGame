@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
    public float speed = 8f;
    public Transform checkSol;
    bool toucheLeSol = false;
-   float rayonSol = 0.3f; // augmenter cette valeur pour permettre le double saut marche bien : 3f
+   float rayonSol = 0.3f;
    public LayerMask sol;
 
    void Update()
