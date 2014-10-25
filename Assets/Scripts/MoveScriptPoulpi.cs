@@ -28,7 +28,6 @@ public class MoveScriptPoulpi : MonoBehaviour
 
    void calculMvt()
    {
-      print("Calcul direction\n");
       movementLeft = new Vector2(
          speed.x * directionLeft.x,
          speed.y * directionLeft.y);

@@ -22,6 +22,7 @@ public class PlayerScript : MonoBehaviour
    bool toucheLeSol = false;
    float rayonSol = 0.3f;
    public LayerMask sol;
+   public bool rightDirection = true; // true vers la droite, false vers la gauche
 
    void Update()
 	{
@@ -42,12 +43,14 @@ public class PlayerScript : MonoBehaviour
 		{
 			transform.Translate(inputX * speed * Time.deltaTime, 0, 0);
 			transform.eulerAngles = new Vector2(0, 0);
+         rightDirection = true;
 		}
 
 		if (inputX < 0)
 		{
 			transform.Translate(- inputX * speed * Time.deltaTime, 0, 0);
 			transform.eulerAngles = new Vector2(0, 180);
+         rightDirection = false;
 		}
 		/*
 		movement = new Vector2(

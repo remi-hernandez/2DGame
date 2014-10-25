@@ -13,6 +13,7 @@ public class WeaponScript : MonoBehaviour
 	/// Prefab du projectile
 	/// </summary>
 	public Transform shotPrefab;
+   public PlayerScript player;
 	
 	/// <summary>
 	/// Temps de rechargement entre deux tirs
@@ -58,11 +59,20 @@ public class WeaponScript : MonoBehaviour
 			// Position
 			shotTransform.position = transform.position;
 			
-         // Test modification de la position a l'apparition
-         shootPosition.x = transform.position.x + 3;
-         shootPosition.y = transform.position.y + (float)0.5;
-         shotTransform.position = shootPosition;
-
+         // Modification de la position a l'apparition de la balle
+         if (player.rightDirection == true)
+         {
+            shootPosition.x = transform.position.x + 3;
+            shootPosition.y = transform.position.y + (float)0.5;
+            shotTransform.position = shootPosition;
+         }
+         else
+         {
+            shootPosition.x = transform.position.x - 3;
+            shootPosition.y = transform.position.y + (float)0.5;
+            shotTransform.position = shootPosition;
+            shotTransform.transform.eulerAngles = new Vector2(0, 180);
+         }
 			// Propriétés du script
 			ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 			if (shot != null)
@@ -70,12 +80,12 @@ public class WeaponScript : MonoBehaviour
 				shot.isEnemyShot = isEnemy;
 			}
 			
-			// On saisit la direction pour le mouvement
-			MoveScriptPoulpi move = shotTransform.gameObject.GetComponent<MoveScriptPoulpi>();
+			// Direction pour le mouvement
+			MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
 			if (move != null)
 			{
 				move.direction = this.transform.right; // ici la droite sera le devant de notre objet
-			}
+			}            
 		}
 	}
 	
