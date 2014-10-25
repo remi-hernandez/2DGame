@@ -71,7 +71,7 @@ public class WeaponScript : MonoBehaviour
 			}
 			
 			// On saisit la direction pour le mouvement
-			MoveScript move = shotTransform.gameObject.GetComponent<MoveScript>();
+			MoveScriptPoulpi move = shotTransform.gameObject.GetComponent<MoveScriptPoulpi>();
 			if (move != null)
 			{
 				move.direction = this.transform.right; // ici la droite sera le devant de notre objet

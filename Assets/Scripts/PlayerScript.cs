@@ -77,8 +77,8 @@ public class PlayerScript : MonoBehaviour
       toucheLeSol = Physics2D.OverlapCircle(checkSol.position, rayonSol, sol);
       
 		// 5 - Déplacement
-      print("seconds : " + seconds);
-      if (seconds >= 0.15)
+      // print("seconds : " + seconds);
+      if (seconds >= 0.20)
          nbJumps = 0;
 		if (toucheLeSol && Jumped || Jumped && nbJumps >= 1 && nbJumps < 2) 
 		{
