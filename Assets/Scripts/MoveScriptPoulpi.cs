@@ -16,6 +16,7 @@ public class MoveScriptPoulpi : MonoBehaviour
    /// <summary>
    /// Direction
    /// </summary>
+   public bool rightDirection = false;
    public Vector2 direction = new Vector2(-1, 0); // sert pour weaponScript - a changer quand change de direction
    private Vector2 directionLeft = new Vector2(-1, 0); // a passer en private
    private Vector2 directionRight = new Vector2(1, 0); // a passer en private
@@ -39,11 +40,13 @@ public class MoveScriptPoulpi : MonoBehaviour
       {
          if (movement == movementLeft)
          {
+            rightDirection = true;
             movement = movementRight;
             transform.eulerAngles = new Vector2(0, 180); // permet de tourner l'asset
          }
          else
          {
+            rightDirection = false;
             movement = movementLeft;
             transform.eulerAngles = new Vector2(0, 0);
          }

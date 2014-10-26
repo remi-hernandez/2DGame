@@ -9,18 +9,14 @@ public class WeaponScript : MonoBehaviour
 	// 1 - Designer variables
 	//--------------------------------
 	
-	/// <summary>
-	/// Prefab du projectile
-	/// </summary>
-	public Transform shotPrefab;
-   public PlayerScript player;
+	public Transform shotPrefab; // prefab du projectile
+   public float shootingRate = 0.25f; // temps de rechargement entre deux tirs
+   public PlayerScript player; // sert pour la direction du tir
+   public MoveScriptPoulpi poulpi; // sert pour la direction du tir
+	public bool playerUser;
+   public bool poulpiUser;
 	
-	/// <summary>
-	/// Temps de rechargement entre deux tirs
-	/// </summary>
-	public float shootingRate = 0.25f;
-	
-	//--------------------------------
+   //--------------------------------
 	// 2 - Rechargement
 	//--------------------------------
 	
@@ -49,30 +45,49 @@ public class WeaponScript : MonoBehaviour
 	/// </summary>
 	public void Attack(bool isEnemy)
 	{
+      if (player == null)
+      {
+         print("the player is null \n");
+      }
 		if (CanAttack)
 		{
 			shootCooldown = shootingRate;
-			
-			// Création d'un objet copie du prefab
-			var shotTransform = Instantiate(shotPrefab) as Transform;
-			
-			// Position
-			shotTransform.position = transform.position;
-			
-         // Modification de la position a l'apparition de la balle
-         if (player.rightDirection == true)
+			var shotTransform = Instantiate(shotPrefab) as Transform; // Création d'un objet copie du prefab
+			shotTransform.position = transform.position; // position
+
+         if (playerUser == true)
          {
-            shootPosition.x = transform.position.x + 3;
-            shootPosition.y = transform.position.y + (float)0.5;
-            shotTransform.position = shootPosition;
+            // Modification de la position a l'apparition de la balle
+            if (player.rightDirection == true)
+            {
+               shootPosition.x = transform.position.x + 3;
+               shootPosition.y = transform.position.y + (float)0.5;
+               shotTransform.position = shootPosition;
+            }
+            else
+            {
+               shootPosition.x = transform.position.x - 3;
+               shootPosition.y = transform.position.y + (float)0.5;
+               shotTransform.position = shootPosition;
+               shotTransform.transform.eulerAngles = new Vector2(0, 180);
+            }
          }
-         else
+         else if (poulpiUser == true)
          {
-            shootPosition.x = transform.position.x - 3;
-            shootPosition.y = transform.position.y + (float)0.5;
-            shotTransform.position = shootPosition;
-            shotTransform.transform.eulerAngles = new Vector2(0, 180);
+            if (poulpi.rightDirection == true)
+            {
+               shootPosition.x = transform.position.x + 3;
+               shootPosition.y = transform.position.y;
+               shotTransform.position = shootPosition;
+            }
+            else
+            {
+               shootPosition.x = transform.position.x - 3;
+               shootPosition.y = transform.position.y;
+               shotTransform.position = shootPosition;
+            }
          }
+
 			// Propriétés du script
 			ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
 			if (shot != null)

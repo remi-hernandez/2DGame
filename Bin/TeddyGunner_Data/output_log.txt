@@ -10,7 +10,8 @@ Platform assembly: F:\work\unity\TeddyGunner\Bin\TeddyGunner_Data\Managed\UnityE
 Loading F:\work\unity\TeddyGunner\Bin\TeddyGunner_Data\Managed\UnityEngine.dll into Unity Child Domain
 Platform assembly: F:\work\unity\TeddyGunner\Bin\TeddyGunner_Data\Managed\Assembly-CSharp.dll (this message is harmless)
 Loading F:\work\unity\TeddyGunner\Bin\TeddyGunner_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.072 seconds
+- Completed reload, in  0.047 seconds
 desktop: 2880x1620 59Hz; virtual: 2880x1620 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
+Platform assembly: F:\work\unity\TeddyGunner\Bin\TeddyGunner_Data\Managed\System.Core.dll (this message is harmless)
