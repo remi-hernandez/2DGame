@@ -14,6 +14,11 @@ public class EnemyScript : MonoBehaviour
       weapon = GetComponent<WeaponScript>();
    }
 
+   void Start()
+   {
+      print("Alexis pd\n");
+   }
+
    void Update()
    {
       // Auto-fire

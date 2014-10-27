@@ -27,6 +27,13 @@ public class MoveScriptPoulpi : MonoBehaviour
    public int cptMvtMax = 150;
    private int cptMvt = 0;
 
+   private WeaponScript weapon;
+   void Awake()
+   {
+      print("awake\n");
+      weapon = GetComponent<WeaponScript>();
+   }
+
    void calculMvt()
    {
       movementLeft = new Vector2(
@@ -60,6 +67,8 @@ public class MoveScriptPoulpi : MonoBehaviour
    {
       // 2 - Calcul du mouvement
       calculMvt();
+      if (weapon != null && weapon.CanAttack)
+         weapon.Attack(true);
    }
 
    void FixedUpdate()

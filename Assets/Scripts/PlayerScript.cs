@@ -14,6 +14,7 @@ public class PlayerScript : MonoBehaviour
 	
 	// 2 - Stockage du mouvement
 	// private Vector2 movement;
+   public Animator anim;
    private bool 	Jumped = false;
    private int nbJumps = 0;
    private System.DateTime timeJumped = System.DateTime.Now;
@@ -24,21 +25,25 @@ public class PlayerScript : MonoBehaviour
    public LayerMask sol;
    public bool rightDirection = true; // true vers la droite, false vers la gauche
 
+   void Start()
+   {
+      anim = GetComponent<Animator> ();
+   }
+
    void Update()
 	{
 		// 3 - Récupérer les informations du clavier/manette
 		float inputX = Input.GetAxis("Horizontal");
 		//float inputY = Input.GetAxis("Vertical");
-
+      
 		if (Input.GetButtonDown("Jump"))
 		{
-			Jumped = true;
-			//rigidbody2D.AddForce(new Vector2(0, 200));
-			//transform.Translate (0, 1, 0);
-			//print("JUMP LA PUTE");
+			Jumped = true; // test - a delete ?
 		}
 
 		// 4 - Calcul du mouvement
+
+      anim.SetFloat("speed", Mathf.Abs(inputX)); // permet de set la variable pour le deplacement dans animator
 		if (inputX > 0) 
 		{
 			transform.Translate(inputX * speed * Time.deltaTime, 0, 0);

@@ -8,10 +8,7 @@ public class ShotScript : MonoBehaviour
 {
 	// 1 - Designer variables
 	
-	/// <summary>
-	/// Points de dégâts infligés
-	/// </summary>
-	public int damage = 1;
+	public int damage = 1; // points de dégats infligé
 	
 	/// <summary>
 	/// Projectile ami ou ennemi ?

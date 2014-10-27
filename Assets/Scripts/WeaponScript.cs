@@ -57,6 +57,7 @@ public class WeaponScript : MonoBehaviour
 
          if (playerUser == true)
          {
+            print("I'm the player\n");
             // Modification de la position a l'apparition de la balle
             if (player.rightDirection == true)
             {
@@ -74,6 +75,7 @@ public class WeaponScript : MonoBehaviour
          }
          else if (poulpiUser == true)
          {
+            print("I'm the poulpi\n");
             if (poulpi.rightDirection == true)
             {
                shootPosition.x = transform.position.x + 3;
